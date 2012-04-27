@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui-1.8.17.custom.css" media="screen" />
+     <!-- Including The jQuery Library -->
+    <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+     <!-- Including The jQuery UI Library -->
+    <script type="text/javascript" src="js/jquery-ui-1.8.17.custom.min.js"></script>
+     <!-- Including The cookies Library for javascript cookie manipulation-->
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
+     <!-- Including The table sorting Library -->
+    <script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
+     <!-- Including The pagination addon for the table sorting Library -->
+    <script type="text/javascript" src="js/jquery.tablesorter.pager.js"></script>
+    
+    <script src="js/application.js"></script>
+  </head>
+  <body>
+    <div id="error">
+      <p></p>
+    </div>
+    <div id="message">
+      <p></p>
+    </div>
+    <header>
+      <img src="images/logo.png" alt="Expensify logo" />
+    </header>
+    <div id="login_dialog" title="Login">
+      <p>Login using your Expensify account.</p>
+      <form>
+        <div class="field">
+          <label for="email" class="hidden" />E-Mail</label>
+          <input type="text" name="email" id="email" placeholder="E-Mail" class="field" />
+        </div>
+        <div class="field">
+          <label for="password" class="hidden" />Password</label>
+          <input type="password" name="password" id="password" placeholder="Password" class="field" />
+        </div>
+      </form>
+    </div>
+    <div id="transactions_container">
+      <div id="controls">
+        <button id="add_transaction">Add Transaction</button>
+        <br/>
+        <div id="pager" class="pager">
+          <form>
+            <center>
+              <input type="text" class="pagedisplay" disabled="disabled"/>
+              <br/>
+            
+              <img src="images/first.png" class="first"/>
+              <img src="images/prev.png" class="prev"/>
+              <select class="pagesize">
+                <option selected="selected"  value="10">10</option>
+                <option value="20">20</option>
+                <option  value="40">40</option>
+                <option value="30">60</option>
+              </select>
+              <img src="images/next.png" class="next"/>
+              <img src="images/last.png" class="last"/>
+            </center>
+          </form>
+        </div>
+      </div>
+      <table id="transactions_table" class="tablesorter">
+        <thead>
+          <tr>
+            <th>Merchant</th>
+            <th>Amount</th>
+            <th>Date</th>
+          </tr>
+        </thead>     
+        <tbody>
+        </tbody>
+      </table>
+
+     <button id="logout">logout</button> 
+    </div>
+    <div id="transaction_dialog" title="Add Transaction">
+      <form>
+        <div class="field">
+          <label for="merchant" class="hidden" />Merchant Name</label>
+          <input type="text" name="merchant" id="merchant" class="field" placeholder="Merchant Name" />
+        </div>
+        <div class="field">
+          <label for="amount" class="hidden" />Amount</label>
+          <input type="text" name="amount" id="amount" class="field" placeholder="Amount" />
+        </div>
+        <div class="field">
+          <label for="created" class="hidden" />Date</label>
+          <input type="text" name="created" id="created" class="field" placeholder="Date" />
+        </div>
+      </form>
+    </div>
+    <div id="loader">
+      <div id="loader_container">
+        <p>Loading Transactions, Please Wait.</p>
+        <img src="images/loader.gif" alt="loading bar" />
+      </div>
+    </div>
+  </body>
+</html>
